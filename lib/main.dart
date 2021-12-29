@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -13,8 +13,15 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('profile_UI'),
+          title: const Text('profile_UI'),
           backgroundColor: Colors.redAccent,
+        ),
+        body: Center(
+          child: Image.asset(
+            "images/welcome-cats.png",
+            width: 300,
+            height: 500,
+          ),
         ),
       ),
     );
