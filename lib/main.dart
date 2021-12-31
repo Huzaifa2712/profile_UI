@@ -11,39 +11,60 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'profile_ui',
       home: Scaffold(
+        backgroundColor: Colors.tealAccent,
         appBar: AppBar(
           centerTitle: true,
           title: const Text('My Profile'),
           backgroundColor: Colors.teal[700],
         ),
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [Colors.teal.shade300, Colors.tealAccent],
-            ),
-          ),
-          child: Center(
+        body: Center(
+          child: Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    stops: const [
+                  0.1,
+                  0.5,
+                  0.9
+                ],
+                    colors: [
+                  Colors.teal.shade300,
+                  Colors.tealAccent,
+                  Colors.teal.shade400
+                ])),
             child: Column(
               children: <Widget>[
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: CircleAvatar(
-                    radius: 80,
-                    backgroundImage: AssetImage(
-                        'images/162844464_1414273595578237_7716134268870501178_n.jpg'),
+                    backgroundColor: Colors.teal,
+                    radius: 100,
+                    child: CircleAvatar(
+                      radius: 92,
+                      backgroundImage: AssetImage(
+                          'images/162844464_1414273595578237_7716134268870501178_n.jpg'),
+                    ),
                   ),
                 ),
-                const ListTile(
-                  title: Text(
-                    'Muhammad Huzaifa Khan',
-                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-                  ),
-                  // ignore: unnecessary_const
-                  subtitle: const Text(
-                    'Web and Mobile App Developer',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: ListTile(
+                    title: Center(
+                      child: Text(
+                        'Muhammad Huzaifa Khan',
+                        style: TextStyle(
+                            fontSize: 35, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    // ignore: unnecessary_const
+                    subtitle: Center(
+                      child: Text(
+                        'Web and Mobile App Developer',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ),
                 ),
                 Padding(
@@ -54,7 +75,7 @@ class MyApp extends StatelessWidget {
                       MaterialButton(
                           height: 50,
                           minWidth: 100,
-                          color: Colors.white,
+                          color: Colors.teal.shade600,
                           child: const Text(
                             'Message',
                             style: TextStyle(
@@ -64,7 +85,7 @@ class MyApp extends StatelessWidget {
                       MaterialButton(
                           minWidth: 100,
                           height: 50,
-                          color: Colors.white,
+                          color: Colors.teal.shade600,
                           child: const Text(
                             'Call',
                             style: TextStyle(
